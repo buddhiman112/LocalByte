@@ -75,7 +75,7 @@ main {
 
 .slider {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.9s ease-in-out;
     height: 100%;
 }
 
@@ -192,27 +192,205 @@ main {
     font-size: 1.1rem;
 }
 
-footer {
-    background-color: var(--text-color);
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.counter-section {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 80%;
+    max-width: 1000px;
+    animation: fadeIn 1.5s ease-in-out;
+    /* Fade-in animation for the section */
+}
+
+.counter-box {
+    flex: 1;
+    margin: 0 10px;
+    transform: scale(0.8);
+    animation: popIn 1s ease-out forwards;
+    /* Pop-in scaling effect */
+
+}
+
+.counter-box:nth-child(2) {
+    animation-delay: 0.3s;
+    /* Delay for the second box */
+}
+
+.counter-box:nth-child(3) {
+    animation-delay: 0.6s;
+    /* Delay for the third box */
+}
+
+.counter-box h1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+    /* Start invisible */
+    animation: fadeScale 1.5s ease-out forwards;
+}
+
+.counter-box p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Fade-in Keyframe */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pop-in Keyframe */
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Fade and Scale Effect for Numbers */
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+h1,
+h2,
+h3 {
+    margin: 0 0 10px;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 40px 20px;
+}
+
+.faq-section h1 {
+    text-align: left;
+    font-size: 28px;
+}
+
+.faq-item {
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+    position: relative;
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-item h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.faq-badge {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-color: #eaeaea;
+    border-radius: 50px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Review Section */
+.review-section {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+textarea {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+}
+
+.submit-review {
+    margin-top: 10px;
+}
+
+/* About Website Section */
+.about-website {
+    padding: 40px 20px;
+    background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem;
 }
 
-@media (max-width: 768px) {
-    .info-container {
-        flex-direction: column;
-    }
-
-    .info-box {
-        margin-bottom: 2rem;
-    }
-
-    .slide-content h2 {
-        font-size: 2rem;
-    }
-
-    .slide-content p {
-        font-size: 1rem;
-    }
+.about-website p {
+    max-width: 600px;
+    margin: 0 auto;
 }
+
+
+
+
+/* General Footer Styling */
+
