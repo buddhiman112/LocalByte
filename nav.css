@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.firstpart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #070606;
+  color: rgb(249, 249, 247);
+}
+
+.logo img {
+  font-size: 4px;
+  height: 100px;
+  font-weight: bold;
+}
+
+.sub-topic {
+  text-align: center;
+  font-family: cursive;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 44px;
+  gap: 55px;
+  position: relative; /* To position the dropdown menu relative to the icon */
+}
+
+.social-media p {
+  margin: 0;
+}
+
+.social-media a {
+  font-size: 24px;
+  color: #333; /* Default icon color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Hover effect on the icon */
+.social-media a:hover {
+  color: #f4a261; /* Change icon color on hover */
+  transform: scale(1.2); /* Slightly enlarge the icon */
+}
+
+/* Dropdown Menu Styles */
+.menu {
+  display: none; /* Hide menu by default */
+  position: absolute; /* Position it below the icon */
+  top: 30px; /* Adjust top positioning */
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 150px;
+  z-index: 1000;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 5px 10px;
+}
+
+.menu li a:hover {
+  background-color: #f4a261;
+  color: white;
+}
