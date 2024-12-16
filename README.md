@@ -1,2 +1,0 @@
-# NeoNuts
-the hacathon
