@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(3, auto); /* 3 rows */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns in each row */
+    justify-items: center; /* Centers sliders horizontally */
+    align-items: center; /* Centers sliders vertically */
+    gap: 20px; /* Spacing between sliders */
+}
+
+#slidder, #slidder1, #slidder2, #slidder3, #slidder4, #slidder5, #slidder6, #slidder7, #slidder8, #slidder9 {
+    width: 300px; /* Adjusted width to fit 3 sliders in a row */
+    height: 400px; /* Adjusted height */
+    background-color: red;
+    border-radius: 20px; /* Rounded corners */
+}
+
+img {
+    width: 250px; /* Fits within the slider */
+    height: 200px; /* Proportional height */
+    border-radius: 10px; /* Optional: Rounded corners for the image */
+    object-fit: cover; /* Ensures the image covers the dimensions without distortion */
+}
