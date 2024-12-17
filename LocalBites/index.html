@@ -26,7 +26,7 @@
         <div class="container">
             <!-- Logo Section -->
             <div class="logo">
-                <img src="logo2.png" alt="LOCALBITES Logo" />
+                <img src="images/logo.png" alt="LOCALBITES Logo" />
                 <h1>LOCALBITES</h1>
             </div>
 
@@ -55,329 +55,369 @@
                 <nav class="navbar">
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="/LocalBites/navbafooter/About.html">About</a></li>
                         <li><a href="#restaurant">Restaurant</a></li>
                         <li><a href="#foods">Foods</a></li>
-                        <li><a href="#menu">Menu</a></li>
                         <li><a href="#blogs">Blogs</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
+    </header>
 
 
-        <main>
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const headerRight = document.querySelector('.header-right');
 
-            <!-- Short Video Section -->
-            <section id="home" class="video-container">
-                <video autoplay muted loop playsinline class="background-video">
-                    <source src="images/slidervideo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay">
-                    <h2>Welcome to Gourmet Explorer</h2>
-                    <p>Experience the finest dining spots and culinary wonders in your city.</p>
-                </div>
-            </section>
+        mobileMenuBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            headerRight.classList.toggle('active');
+            mobileMenuBtn.textContent = headerRight.classList.contains('active') ? '✕' : '☰';
+        });
 
-            <!-- Food Feature Section -->
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!headerRight.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                headerRight.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
 
+        // Prevent menu from closing when clicking inside
+        headerRight.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
 
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-            <section class="food-features">
-                <div class="features-container">
-                    <!-- Single Feature -->
-                    <div class="feature-box" data-aos="fade-up">
-                        <img src="images/image.png" alt="Local Gems" class="feature-icon">
-                        <h3>Local Gems</h3>
-                        <p>Discover hidden eateries in your neighborhood.</p>
-                    </div>
-
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://via.placeholder.com/60" alt="Culinary Tours" class="feature-icon">
-                        <h3>Culinary Tours</h3>
-                        <p>Join guided tours for food lovers.</p>
-                    </div>
-
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://via.placeholder.com/60" alt="Chef Spotlights" class="feature-icon">
-                        <h3>Chef Spotlights</h3>
-                        <p>Meet the culinary wizards behind dishes.</p>
-                    </div>
-
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://via.placeholder.com/60" alt="Foodie Events" class="feature-icon">
-                        <h3>Foodie Events</h3>
-                        <p>Stay updated on local food festivals.</p>
-                    </div>
-
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="400">
-                        <img src="https://via.placeholder.com/60" alt="Cuisine Variety" class="feature-icon">
-                        <h3>Cuisine Variety</h3>
-                        <p>Explore flavors from every corner of the globe.</p>
-                    </div>
-
-                    <div class="feature-box" data-aos="fade-up" data-aos-delay="500">
-                        <img src="https://via.placeholder.com/60" alt="User Reviews" class="feature-icon">
-                        <h3>User Reviews</h3>
-                        <p>Read real opinions from fellow foodies.</p>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <!-- AOS Library for Animation -->
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <script>
-                AOS.init({
-                    duration: 1000, // Animation duration
-                    once: true // Only animate once
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
-            </script>
 
+                // Close mobile menu after clicking a link
+                headerRight.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+    </script>
 
+    <main>
 
-            <!-- Second div: Local Restaurant and Local Food -->
-            <section id="discover" class="info-container">
-                <div class="info-box" id="local-restaurant">
-                    <h2>Local Restaurants</h2>
-                    <p>Discover the best local restaurants in your area. Experience unique flavors and atmospheres that
-                        make
-                        our community special.</p>
-                    <button class="cta-button">Explore Restaurants</button>
-                </div>
-                <div class="info-box" id="local-food">
-                    <h2>Local Cuisine</h2>
-                    <p>Savor the authentic tastes of our local cuisine. From traditional dishes to modern twists,
-                        explore
-                        the flavors that define our region.</p>
-                    <button class="cta-button">Discover Local Cuisine</button>
-                </div>
-            </section>
-
-            <!-- Third div: About Us -->
-            <section id="about" class="about-us">
-                <h2>About Gourmet Explorer</h2>
-                <p>We are passionate about connecting food lovers with the best local restaurants and cuisines. Our
-                    mission
-                    is to showcase the rich culinary heritage of our community while supporting local businesses.
-                    Whether
-                    you're a longtime resident or a visitor, we're here to guide you through an unforgettable
-                    gastronomic
-                    journey.
-                </p>
-            </section>
-
-            <!-- Counter Section -->
-            <section class="counter-section">
-                <div class="counter-item">
-                    <h1><span class="counter animated" data-target="1000">0</span>+</h1>
-                    <p>Restaurants Listed</p>
-                </div>
-                <div class="counter-item">
-                    <h1><span class="counter animated" data-target="500000">0</span>+</h1>
-                    <p>Happy Diners</p>
-                </div>
-                <div class="counter-item">
-                    <h1><span class="counter animated" data-target="100">0</span>+</h1>
-                    <p>Cuisines Explored</p>
-                </div>
-            </section>
-
-
-
-
-
-            <!-- FAQ Section -->
-            <div class="faq-section">
-                <h1>Frequently Asked Questions</h1>
-                <p>Got questions? We've got answers!</p>
-                <summary>
-                    <h3>How do I find restaurants?</h3>
-                </summary>
-                <details>
-                    <div class="faq-item">
-                        <p>Use our search feature to find nearby restaurants instantly!</p>
-                        <button class="btn search-btn">Search Now</button>
-                        <div class="faq-badge">Search</div>
-                    </div>
-                </details>
-                <summary>
-                    <h3>Can I leave reviews?</h3>
-                </summary>
-                <details>
-                    <div class="faq-item">
-
-                        <p>Absolutely! Share your thoughts and help others dine better!</p>
-                        <button class="btn review-btn">Search Now</button>
-                        <div class="faq-badge">Reviews</div>
-                    </div>
-                </details>
-
-                <summary>
-                    <h3>Is this site free to use?</h3>
-                </summary>
-                <details>
-                    <div class="faq-item">
-                        <p>Yes, it's completely free! Enjoy exploring without spending a dime!</p>
-                        <button class="btn free-btn">Search Now</button>
-                        <div class="faq-badge">Free</div>
-                    </div>
-                </details>
-
+        <!-- Short Video Section -->
+        <section id="home" class="video-container">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="images/slidervideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay">
+                <h2>Welcome to Gourmet Explorer</h2>
+                <p>Experience the finest dining spots and culinary wonders in your city.</p>
             </div>
+        </section>
 
-            <!-- Visitor Review and About Section -->
-            <div class="review-section">
-                <h2>Share Your Experience</h2>
-                <p>Leave a review and tell us about your experience using our website.</p>
-                <textarea placeholder="Write your review here..." rows="5"></textarea>
-                <button class="btn submit-review">Submit Review</button>
-            </div>
-
-            <div class="about-website">
-                <h2>About Us</h2>
-                <p>This platform helps you discover local restaurants and food experiences effortlessly. Whether you
-                    want to
-                    explore new dining spots or share your reviews, everything here is <strong>free</strong> for users.
-                </p>
-            </div>
-
-            <section class="contact-form-section">
-                <h1>Get in Touch!</h1>
-                <form class="contact-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <input type="tel" placeholder="Phone" required>
-                    <textarea rows="4" placeholder="Message" required></textarea>
-                    <button type="submit" class="btn">Send It!</button>
-                </form>
-            </section>
-
-            <!-- Contact Us Section -->
-            <div id="contact-us-section">
-                <section class="contact-us-section">
-                    <div class="contact-details">
-                        <h2>Contact Us</h2>
-                        <p><strong>Phone:</strong> (555) 123-4567</p>
-                        <p><strong>Email:</strong> info@foodexplorer.com</p>
-                        <p><strong>Address:</strong> Kathmandu, Nepal</p>
-                        <p><strong>Working Hours:</strong> Mon-Sun: 9 AM - 11 PM</p>
-                    </div>
-                    <div class="map">
-                        <!-- Embedded Map -->
-                        <iframe src="https://maps.google.com/maps?q=Kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </section>
-            </div>
-
-            <!--Footer Section Start-->
+        <!-- Food Feature Section -->
 
 
 
-
-        </main>
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h2>Local Bites</h2>
-                    <p>Discover the best local flavors in your area.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
+        <section class="food-features">
+            <div class="features-container">
+                <!-- Single Feature -->
+                <div class="feature-box" data-aos="fade-up">
+                    <img src="images/image.png" alt="Local Gems" class="feature-icon">
+                    <h3>Local Gems</h3>
+                    <p>Discover hidden eateries in your neighborhood.</p>
                 </div>
-                <div class="footer-section">
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://via.placeholder.com/60" alt="Culinary Tours" class="feature-icon">
+                    <h3>Culinary Tours</h3>
+                    <p>Join guided tours for food lovers.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://via.placeholder.com/60" alt="Chef Spotlights" class="feature-icon">
+                    <h3>Chef Spotlights</h3>
+                    <p>Meet the culinary wizards behind dishes.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://via.placeholder.com/60" alt="Foodie Events" class="feature-icon">
+                    <h3>Foodie Events</h3>
+                    <p>Stay updated on local food festivals.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://via.placeholder.com/60" alt="Cuisine Variety" class="feature-icon">
+                    <h3>Cuisine Variety</h3>
+                    <p>Explore flavors from every corner of the globe.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://via.placeholder.com/60" alt="User Reviews" class="feature-icon">
+                    <h3>User Reviews</h3>
+                    <p>Read real opinions from fellow foodies.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- AOS Library for Animation -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000, // Animation duration
+                once: true // Only animate once
+            });
+        </script>
+
+
+
+        <!-- Second div: Local Restaurant and Local Food -->
+        <section id="discover" class="info-container">
+            <div class="info-box" id="local-restaurant">
+                <h2>Local Restaurants</h2>
+                <p>Discover the best local restaurants in your area. Experience unique flavors and atmospheres that
+                    make
+                    our community special.</p>
+                <button class="cta-button">Explore Restaurants</button>
+            </div>
+            <div class="info-box" id="local-food">
+                <h2>Local Cuisine</h2>
+                <p>Savor the authentic tastes of our local cuisine. From traditional dishes to modern twists,
+                    explore
+                    the flavors that define our region.</p>
+                <button class="cta-button">Discover Local Cuisine</button>
+            </div>
+        </section>
+
+        <!-- Third div: About Us -->
+        <section id="about" class="about-us">
+            <h2>About Gourmet Explorer</h2>
+            <p>We are passionate about connecting food lovers with the best local restaurants and cuisines. Our
+                mission
+                is to showcase the rich culinary heritage of our community while supporting local businesses.
+                Whether
+                you're a longtime resident or a visitor, we're here to guide you through an unforgettable
+                gastronomic
+                journey.
+            </p>
+        </section>
+
+        <!-- Counter Section -->
+        <section class="counter-section">
+            <div class="counter-item">
+                <h1><span class="counter animated" data-target="1000">0</span>+</h1>
+                <p>Restaurants Listed</p>
+            </div>
+            <div class="counter-item">
+                <h1><span class="counter animated" data-target="500000">0</span>+</h1>
+                <p>Happy Diners</p>
+            </div>
+            <div class="counter-item">
+                <h1><span class="counter animated" data-target="100">0</span>+</h1>
+                <p>Cuisines Explored</p>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h1>Frequently Asked Questions</h1>
+            <p>Got questions? We've got answers!</p>
+            <summary>
+                <h3>How do I find restaurants?</h3>
+            </summary>
+            <details>
+                <div class="faq-item">
+                    <p>Use our search feature to find nearby restaurants instantly!</p>
+                    <button class="btn search-btn">Search Now</button>
+                    <div class="faq-badge">Search</div>
+                </div>
+            </details>
+            <summary>
+                <h3>Can I leave reviews?</h3>
+            </summary>
+            <details>
+                <div class="faq-item">
+
+                    <p>Absolutely! Share your thoughts and help others dine better!</p>
+                    <button class="btn review-btn">Search Now</button>
+                    <div class="faq-badge">Reviews</div>
+                </div>
+            </details>
+
+            <summary>
+                <h3>Is this site free to use?</h3>
+            </summary>
+            <details>
+                <div class="faq-item">
+                    <p>Yes, it's completely free! Enjoy exploring without spending a dime!</p>
+                    <button class="btn free-btn">Search Now</button>
+                    <div class="faq-badge">Free</div>
+                </div>
+            </details>
+
+        </div>
+
+        <!-- Visitor Review and About Section -->
+        <div class="review-section">
+            <h2>Share Your Experience</h2>
+            <p>Leave a review and tell us about your experience using our website.</p>
+            <textarea placeholder="Write your review here..." rows="5"></textarea>
+            <button class="btn submit-review">Submit Review</button>
+        </div>
+
+        <div class="about-website">
+            <h2>About Us</h2>
+            <p>This platform helps you discover local restaurants and food experiences effortlessly. Whether you
+                want to
+                explore new dining spots or share your reviews, everything here is <strong>free</strong> for users.
+            </p>
+        </div>
+
+        <section class="contact-form-section">
+            <h1>Get in Touch!</h1>
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <input type="tel" placeholder="Phone" required>
+                <textarea rows="4" placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Send It!</button>
+            </form>
+        </section>
+
+        <!-- Contact Us Section -->
+        <div id="contact-us-section">
+            <section class="contact-us-section">
+                <div class="contact-details">
                     <h2>Contact Us</h2>
-                    <ul>
-                        <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
-                        <li><strong>Email:</strong> contact@website.com</li>
-                        <li><strong>Address:</strong> Maitidevichowk, Kathmandu, Nepal</li>
-                        <li>Opposite to NIC Asia Bank</li>
-                    </ul>
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                    <p><strong>Email:</strong> info@foodexplorer.com</p>
+                    <p><strong>Address:</strong> Kathmandu, Nepal</p>
+                    <p><strong>Working Hours:</strong> Mon-Sun: 9 AM - 11 PM</p>
                 </div>
-                <div class="footer-section">
-                    <h2>Quick Links</h2>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Restaurant</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blogs/News</a></li>
-                        <li><a href="#">Food</a></li>
-                    </ul>
+                <div class="map">
+                    <!-- Embedded Map -->
+                    <iframe src="https://maps.google.com/maps?q=Kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="footer-section customer-review">
-                    <h2>Customer Review</h2>
-                    <form id="reviewForm">
-                        <textarea id="reviewText" rows="4" placeholder="Write your feedback here..."></textarea>
-                        <button type="submit">Submit</button>
-                    </form>
+            </section>
+        </div>
+
+        <!--Footer Section Start-->
+
+
+
+
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Local Bites</h2>
+                <p>Discover the best local flavors in your area.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> Local Bites, Website by NeoNuts</p>
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
+                    <li><strong>Email:</strong> contact@website.com</li>
+                    <li><strong>Address:</strong> Maitidevichowk, Kathmandu, Nepal</li>
+                    <li>Opposite to NIC Asia Bank</li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Restaurant</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blogs/News</a></li>
+                    <li><a href="#">Food</a></li>
+                </ul>
+            </div>
+            <div class="footer-section customer-review">
+                <h2>Customer Review</h2>
+                <form id="reviewForm">
+                    <textarea id="reviewText" rows="4" placeholder="Write your feedback here..."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="currentYear"></span> Local Bites, Website by NeoNuts</p>
+        </div>
 
-            <!-- JavaScript for Functionality -->
-            <script>
-                // JavaScript to toggle the visibility of the menu
-                function toggleMenu() {
-                    var menu = document.getElementById("menu");
-                    if (menu.style.display === "block") {
-                        menu.style.display = "none";
-                    } else {
-                        menu.style.display = "block";
-                    }
+        <!-- JavaScript for Functionality -->
+        <script>
+            // JavaScript to toggle the visibility of the menu
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            }
+
+            // Image Slider functionality
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function changeSlide(n) {
+                showSlides((slideIndex += n));
+            }
+
+            function currentSlide(n) {
+                showSlides((slideIndex = n));
+            }
+
+            function showSlides(n) {
+                let i;
+                const slides = document.getElementsByClassName("slide");
+                const dots = document.getElementsByClassName("dot");
+
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
                 }
 
-                // Image Slider functionality
-                let slideIndex = 1;
-                showSlides(slideIndex);
-
-                function changeSlide(n) {
-                    showSlides((slideIndex += n));
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
                 }
 
-                function currentSlide(n) {
-                    showSlides((slideIndex = n));
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
                 }
 
-                function showSlides(n) {
-                    let i;
-                    const slides = document.getElementsByClassName("slide");
-                    const dots = document.getElementsByClassName("dot");
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
 
-                    if (n > slides.length) {
-                        slideIndex = 1;
-                    }
-                    if (n < 1) {
-                        slideIndex = slides.length;
-                    }
+            // Automatically show the first slide
+            showSlides(slideIndex);
+        </script>
 
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-
-                    for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                }
-
-                // Automatically show the first slide
-                showSlides(slideIndex);
-            </script>
-
-            <script src="script.js"></script>
+        <script src="script.js"></script>
 
 </body>
 

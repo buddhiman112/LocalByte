@@ -109,19 +109,28 @@ document.addEventListener('click', (event) => {
 navMenu.addEventListener('click', (event) => {
     event.stopPropagation();
 });
+
 // Mobile menu toggle functionality
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const headerRight = document.querySelector('.header-right');
 
-mobileMenuBtn.addEventListener('click', () => {
+mobileMenuBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
     headerRight.classList.toggle('active');
+    mobileMenuBtn.textContent = headerRight.classList.contains('active') ? '✕' : '☰';
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (event) => {
     if (!headerRight.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
         headerRight.classList.remove('active');
+        mobileMenuBtn.textContent = '☰';
     }
+});
+
+// Prevent menu from closing when clicking inside
+headerRight.addEventListener('click', (event) => {
+    event.stopPropagation();
 });
 
 // Smooth scroll for navigation links
@@ -135,8 +144,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         // Close mobile menu after clicking a link
         headerRight.classList.remove('active');
+        mobileMenuBtn.textContent = '☰';
     });
 });
+
+
+
+
+
 
 
 
