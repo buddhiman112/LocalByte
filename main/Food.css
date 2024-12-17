@@ -247,13 +247,26 @@ body {
 
   
  #image {
+  margin: 20px;
   justify-content: center;
   align-items: center;
  }
 
  img{
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+  
  }
+
+ /* Zoom effect on image hover */
+#image img {
+  transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+#image img:hover {
+  transform: scale(1.2); /* Zoom in to 1.2x the original size */
+  cursor: pointer; /* Change cursor to pointer */
+}
