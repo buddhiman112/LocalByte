@@ -7,81 +7,157 @@ body {
   transition: background-color 0.3s;
 }
 
-.firstpart {
+
+
+/* Header styles */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+/* Header styles */
+.header {
+  background-color: #000000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  margin: auto;
+  z-index: 1000;
+  height: 120px;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #070606;
-  color: rgb(249, 249, 247);
-  position: relative;
-  animation: fadeIn 1s ease-in-out;
+  flex-wrap: wrap;
+
 }
 
-
-.logo img {
-  height: 80px;
-}
-
-.sub-topic {
-  text-align: center;
-  font-family: cursive;
-}
-
-.social-media {
+/* Logo styles */
+.logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
 }
 
-.social-media p {
-  margin: 0;
+.logo img {
+  width: 100px;
+  height: 100px;
+  margin-right: 1rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: rgb(244, 243, 243);
+}
+
+/* Header right section styles */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Social media styles */
+.social-media {
+  display: flex;
+  gap: 1rem;
+  margin-right: 2rem;
 }
 
 .social-media a {
-  font-size: 24px;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+  color: #efe9e9;
+  transition: color 0.3s ease;
 }
 
 .social-media a:hover {
-  color: #f4a261;
-  transform: scale(1.2);
+  color: #ef5959;
 }
 
-.menu {
-  display: none;
-  position: absolute;
-  top: 35px;
-  right: 0;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-}
-
-.menu ul {
+/* Navbar styles */
+.navbar ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.menu li {
-  padding: 10px;
-}
-
-.menu li a {
-  color: #333;
+.navbar a {
   text-decoration: none;
-  padding: 8px 15px;
-  display: block;
+  color: #f4ecec;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-weight: bold;
+
 }
 
-.menu li a:hover {
-  background-color: #f4a261;
-  color: white;
+.navbar a:hover {
+  color: #f04c4c;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 1001;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f96868;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+
+  .social-media {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .header-right.active {
+    display: flex;
+  }
 }
 
 /* Main Body */
@@ -177,44 +253,8 @@ body {
   width: 100%;
 }
 
-.firstpart {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #070606;
-  color: rgb(249, 249, 247);
-}
 
-.logo img {
-  font-size: 4px;
-  height: 100px;
-  font-weight: bold;
-}
 
-.sub-topic {
-  text-align: center;
-  font-family: cursive;
-}
-
-.social-media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 44px;
-  gap: 55px;
-  position: relative; /* To position the dropdown menu relative to the icon */
-}
-
-.social-media p {
-  margin: 0;
-}
-
-.social-media a {
-  font-size: 24px;
-  color: #333; /* Default icon color */
-  text-decoration: none; /* Remove underline */
-}
 .footer {
   background-color: #2c3e50;
   color: #ecf0f1;
@@ -308,6 +348,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
