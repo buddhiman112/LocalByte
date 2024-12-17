@@ -89,137 +89,128 @@ body {
 }
 /* General Footer Styles */
 .footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 40px 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-section {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex: 1 1 250px;
   margin-bottom: 20px;
 }
 
-.footer-column {
-  width: 22%;
+.footer h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #f39c12;
 }
 
-.footer-column h3 {
-  color: #f4a261;
-  margin-bottom: 10px;
-}
-
-.footer-column ul {
+.footer ul {
   list-style-type: none;
   padding: 0;
 }
 
-.footer-column li {
-  margin-bottom: 8px;
+.footer ul li {
+  margin-bottom: 10px;
 }
 
-.footer-column a {
-  color: white;
+.footer a {
+  color: #ecf0f1;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.footer-column a:hover {
-  text-decoration: underline;
+.footer a:hover {
+  color: #f39c12;
 }
 
-/* Social Icons */
 .social-icons {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  margin-top: 15px;
 }
 
 .social-icons a {
-  margin: 0 10px;
-  font-size: 24px;
-  color: white;
+  margin-right: 15px;
+  font-size: 20px;
 }
 
-.social-icons a:hover {
-  color: #f4a261;
-}
-
-/* Customer Review Section */
-textarea {
+.customer-review textarea {
   width: 100%;
-  height: 100px;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   margin-bottom: 10px;
+  border: 1px solid #34495e;
+  background-color: #34495e;
+  color: #ecf0f1;
+  border-radius: 4px;
 }
 
-.submit-btn {
-  background-color: #f4a261;
-  color: white;
-  padding: 10px 20px;
+.customer-review button {
+  background-color: #f39c12;
+  color: #2c3e50;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover {
-  background-color: #e07b4e;
+.customer-review button:hover {
+  background-color: #e67e22;
 }
 
-/* Copyright */
 .copyright {
   text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
 }
 
-.copyright ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.copyright li {
-  margin: 0 px;
-  color: white;
-}
-
-.copyright i {
-  font-size: 18px;
+.footer-section {
+  animation: fadeInUp 0.5s ease-out;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .footer-column {
-    width: 48%;
-    margin-bottom: 20px;
+  .footer-content {
+    flex-direction: column;
   }
 
-  .social-icons a {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-column {
-    width: 100%;
+  .footer-section {
+    margin-bottom: 30px;
   }
 }
 
-
-h1
-{
+h1 {
   font-size: 50px;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 p {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 25px;
 }
 
@@ -229,22 +220,18 @@ p {
   background-image: url(background.jpg);
   display: flex;
   margin: 50px;
-
 }
 
-p1
-{
+p1 {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 100px;
   font-size: 28px;
   color: white;
   font-weight: bold;
-
 }
 
 image {
-  
   padding: 10px;
   margin-right: 10px;
 }
@@ -257,10 +244,9 @@ img {
 
 /* Zoom-in effect for all images */
 .image img {
-    transition: transform 0.5s ease; /* Smooth scaling */
-  }
-  
-  .image img:hover {
-    transform: scale(1.1); /* Zoom in by 10% */
-  }
-  
+  transition: transform 0.5s ease; /* Smooth scaling */
+}
+
+.image img:hover {
+  transform: scale(1.1); /* Zoom in by 10% */
+}
