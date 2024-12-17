@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALBITES Header</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Logo styles */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 1rem;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        /* Header right section styles */
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Social media styles */
+        .social-media {
+            display: flex;
+            gap: 1rem;
+            margin-right: 2rem;
+        }
+
+        .social-media a {
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Navbar styles */
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            z-index: 1001;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-right {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+            }
+
+            .social-media {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .navbar {
+                width: 100%;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .header-right.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="logo." alt="LOCALBITES Logo" />
+                <h1>LOCALBITES</h1>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                ☰
+            </button>
+
+            <!-- Header Right Section -->
+            <div class="header-right">
+                <!-- Social Media Section -->
+                <div class="social-media">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+
+                <!-- Navbar Section -->
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#restaurant">Restaurant</a></li>
+                        <li><a href="#foods">Foods</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const headerRight = document.querySelector('.header-right');
+
+        mobileMenuBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            headerRight.classList.toggle('active');
+            mobileMenuBtn.textContent = headerRight.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!headerRight.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                headerRight.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+
+        // Prevent menu from closing when clicking inside
+        headerRight.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu after clicking a link
+                headerRight.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+    </script>
+</body>
+
+</html>

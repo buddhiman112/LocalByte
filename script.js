@@ -90,3 +90,22 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollInterval = setInterval(autoScroll, 20); // Resume scrolling when mouse leaves
     });
 });
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+        navMenu.classList.remove('active');
+    }
+});
+
+// Prevent clicks inside the menu from closing it
+navMenu.addEventListener('click', (event) => {
+    event.stopPropagation();
+});

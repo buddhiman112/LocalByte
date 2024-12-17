@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="firstpart">
+      <div class="logo"><img src="IMG_4063.PNG" alt="Logo" /></div>
+      <div class="sub-topic">
+        <h1>Local Bites</h1>
+        <p>"Taste and Trust"</p>
+      </div>
+      <div class="social-media">
+        <p>Contact us</p>
+        <a href="javascript:void(0);" onclick="toggleMenu()">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </a>
+        <!-- Dropdown Menu -->
+        <div id="menu" class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Restaurant</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Food</a></li>
+            <li><a href="#">Blog/News</a></li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<h1>Best local Dining Experience</h1>
+
+<p>"Local Food" is a platform dedicated to showcasing the best <br>local dining experiences. From cozy restaurants to unique local dishes,<br> it connects the community with culinary treasures that highlight the city's food culture.</p>
+
+
+<div class="box" id="box">
+  <p1>Explore featured eateries offering comfort food, farm-to-table dishes, and international cuisines.<br> Learn about iconic local dishes like artisanal ice cream,<br>
+     famous burgers, and fresh catches from nearby fishermen Hear what the community <br> says about their favorite dining spots and meals. <br>Share exceptional dining experiences with friends and <br>family while celebrating local flavors.</p1>
+</div>
+
+
+<div class="image" id="image">
+  <img src="image.jpg" alt="image">
+  <img src="image2.jpg" alt="image2" style="width: 705px;">
+  <img src="image1.jpg" alt="image1" style="height: 400px; width: 600px;">
+  <img src="image3.jpg" alt="image3"  style="height: 400px; width: 700px;">
+  <img src="image4.jpg" alt="image4" >
+  <img src="image5.jpg" alt="image5" style="width: 630px; margin-bottom: 90px;">
+  <img src="image6.jpg" alt="image6" style="width: 672px; margin-bottom: 100px;">
+  <img src="image7.jpg" alt="image7"  style="width: 650px; margin-bottom: 100px;">
+  
+</div>
+
+
+
+
+
+
+
+
+    <footer class="footer">
+      <h1>Local Bites</h1>
+      <div class="footer-section">
+        <!-- Contact and Location Section -->
+        <div class="footer-column contact">
+          <h3>contact us</h3>
+          <ul>
+            <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
+            <li><strong>Email:</strong> contact@website.com</li>
+          </ul>
+        </div>
+        <div class="footer-column location">
+          <h3>Location</h3>
+          <p>Maitidevichowk, Kathmandu, Nepal</p>
+          <p>Opposite to NIC Asia Bank</p>
+        </div>
+        <!-- About Us Section in the same div -->
+        <div class="footer-column about-us">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Restaurant</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Blogs/News</a></li>
+            <li><a href="#">Food</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <!-- Customer Review Section -->
+        <div class="footer-column customer-review">
+          <h3>Customer Review</h3>
+          <textarea
+            id="comment"
+            placeholder="Write your feedback here..."
+          ></textarea>
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+        <!-- Opening Hours Section -->
+        <div class="footer-column opening-hours">
+          <h3>Opening Hours</h3>
+          <ul>
+            <li>Monday - Friday: 9 AM - 9 PM</li>
+            <li>Saturday - Sunday: 10 AM - 6 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <div class="copyright">
+        <ul>
+          <li><i class="fa-regular fa-copyright"></i> Local Bites,</li>
+          <li>Website by NeoNuts</li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript function to toggle the visibility of the menu
+      function toggleMenu() {
+        var menu = document.getElementById("menu");
+        // Toggle the visibility of the menu by checking its current display value
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
