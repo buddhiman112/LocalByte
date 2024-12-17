@@ -1,26 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Image slider
-    const slider = document.querySelector('.slider');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let currentSlide = 0;
-
-    function goToSlide(index) {
-        currentSlide = (index + slides.length) % slides.length;
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    function nextSlide() {
-        goToSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        goToSlide(currentSlide - 1);
-    }
-
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
 
     // Auto-advance slides
     setInterval(nextSlide, 5000);
@@ -83,41 +60,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Select all counters
-// Select all counters
-const counters = document.querySelectorAll('.counter');
+// Slider Functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter');
 
-// Observer to trigger animations when visible on screen
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counter = entry.target;
-            animateCounter(counter);
-        }
-    });
-}, { threshold: 0.5 }); // Trigger when 50% visible
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
 
-// Observe each counter
-counters.forEach(counter => observer.observe(counter));
-
-// Function to animate counter
-function animateCounter(counter) {
-    const target = +counter.getAttribute('data-target'); // Target number
-    let start = 0; // Initial value
-    const duration = 2000; // Total animation duration in ms
-    const step = target / duration * 10; // Calculate step for smooth increment
-
-    const updateCounter = () => {
-        start += step;
-        if (start < target) {
-            counter.innerText = Math.ceil(start) + "+"; // Add "+" to the number
-            requestAnimationFrame(updateCounter);
-        } else {
-            counter.innerText = target + "+"; // Final value with "+"
-        }
+        const increment = target / 200; // Adjust speed of the animation
+        const updateCounter = () => {
+            count += increment;
+            if (count < target) {
+                counter.innerText = Math.ceil(count) + "+";
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.innerText = target + "+";
+            }
+        };
+        updateCounter();
     };
 
-    updateCounter();
-}
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.1 });
+
+        counters.forEach(counter => observer.observe(counter));
+    } else {
+        // Fallback for older browsers
+        counters.forEach(counter => animateCounter(counter));
+    }
+});
+
+
+
 
 document.querySelector('.submit-review').addEventListener('click', () => {
     const reviewText = document.querySelector('textarea').value.trim();
@@ -164,3 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
         this.style.height = this.scrollHeight + 'px';
     });
 });
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
