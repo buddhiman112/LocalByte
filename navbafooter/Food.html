@@ -1,44 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="Food.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <div class="firstpart">
-      <div class="logo"><img src="IMG_4063.PNG" alt="Logo" /></div>
-      <div class="sub-topic">
-        <h1>Local Bites</h1>
-        <p>"Taste and Trust"</p>
-      </div>
-      <div class="social-media">
-        <p>Contact us</p>
-        <a href="javascript:void(0);" onclick="toggleMenu()">
-          <i class="fa-solid fa-ellipsis-vertical"></i>
-        </a>
-        <!-- Dropdown Menu -->
-        <div id="menu" class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Restaurant</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Blog/News</a></li>
-          </ul>
-          </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="Food.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <main>
+    <header class="header">
+      <div class="container">
+        <!-- Logo Section -->
+        <div class="logo">
+          <img src="../LocalBites/images/logo.png" alt="LOCALBITES Logo" />
+          <h1>LOCALBITES</h1>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          ☰
+        </button>
+
+        <!-- Header Right Section -->
+        <div class="header-right">
+          <!-- Social Media Section -->
+          <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <!-- Navbar Section -->
+          <nav class="navbar">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="/LocalBites/navbafooter/About.html">About</a></li>
+              <li><a href="../Restaurant/restaurant.html">Restaurant</a></li>
+              <li><a href="../navbafooter/Food.html">Foods</a></li>
+
+              <li><a href="../blog&news/blog.html">Blogs</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </div>
-    
+    </header>
+
+
+    <script>
+      // Mobile menu toggle functionality
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const headerRight = document.querySelector('.header-right');
+
+      mobileMenuBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        headerRight.classList.toggle('active');
+        mobileMenuBtn.textContent = headerRight.classList.contains('active') ? '✕' : '☰';
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!headerRight.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+          headerRight.classList.remove('active');
+          mobileMenuBtn.textContent = '☰';
+        }
+      });
+
+      // Prevent menu from closing when clicking inside
+      headerRight.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+
+          // Close mobile menu after clicking a link
+          headerRight.classList.remove('active');
+          mobileMenuBtn.textContent = '☰';
+        });
+      });
+    </script>
+
 
 
 
@@ -47,7 +105,7 @@
 
 
 
-<img src="foodbackground.jpg" alt="backgorund" style="width: 96%;">
+    <img src="foodbackground.jpg" alt="backgorund" style="width: 96%;">
 
 
 
@@ -55,108 +113,128 @@
 
 
 
-<h1>Experience the Culture of Eating <br> local Fresh & Healthy Food.</h1>
+    <h1>Experience the Culture of Eating <br> local Fresh & Healthy Food.</h1>
 
-<p>We source the best ingredients available to us, <br>sometimes grown in our own premises, <br> and at other times from the local produce,<br> we believe in the culture of eating healthy and fresh.</p>
-
-
-
-<div class="image" id="image">
-  <img src="fimage1.jpg" alt="food image" style="width: 400px; height: 300px; ">
-  <img src="fimage2.jpg" alt="food image" style="width: 400px; height: 300px; ">
-  <img src="fimage3.jpg" alt="food image"  style="width: 400px; height: 300px;">
-  <img src="fimage4.jpg" alt="food image" style="width: 400px; height: 300px;"  >
-  <img src="fimage5.jpg" alt="food image" style="width: 400px; height: 300px;">
-  <img src="fimage6.jpg" alt="food image" style="width: 400px; height: 300px;">
-  <img src="fimage7.webp" alt="food image" style="width: 400px; height: 300px;">
-  <img src="fimage8.jpg" alt="food image" style="width: 400px; height: 300px;">
-  <img src="fimage9.jpg" alt="food image" style="width: 400px; height: 300px;">
-  <img src="fimage10.jpg" alt="food image" style="width: 400px; height: 300px;">
-  <img src="fimage11.jpg" alt="food image" style="width: 400px; height: 300px;">
-  <img src="fimage12.jpg" alt="food image" style="width: 400px; height: 300px;"> 
-</div>
+    <p>We source the best ingredients available to us, <br>sometimes grown in our own premises, <br> and at other times
+      from the local produce,<br> we believe in the culture of eating healthy and fresh.</p>
 
 
 
+    <div class="image" id="image">
+      <img src="fimage1.jpg" alt="food image" style="width: 400px; height: 300px; ">
+      <img src="fimage2.jpg" alt="food image" style="width: 400px; height: 300px; ">
+      <img src="fimage3.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage4.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage5.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage6.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage7.webp" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage8.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage9.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage10.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage11.jpg" alt="food image" style="width: 400px; height: 300px;">
+      <img src="fimage12.jpg" alt="food image" style="width: 400px; height: 300px;">
+    </div>
 
 
 
 
+
+  </main>
 
     <footer class="footer">
-      <h1>Local Bites</h1>
-      <div class="footer-section">
-        <!-- Contact and Location Section -->
-        <div class="footer-column contact">
-          <h3>contact us</h3>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h2>Local Bites</h2>
+          <p>Discover the best local flavors in your area.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h2>Contact Us</h2>
           <ul>
             <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
             <li><strong>Email:</strong> contact@website.com</li>
+            <li><strong>Address:</strong> Maitidevichowk, Kathmandu, Nepal</li>
+            <li>Opposite to NIC Asia Bank</li>
           </ul>
         </div>
-        <div class="footer-column location">
-          <h3>Location</h3>
-          <p>Maitidevichowk, Kathmandu, Nepal</p>
-          <p>Opposite to NIC Asia Bank</p>
-        </div>
-        <!-- About Us Section in the same div -->
-        <div class="footer-column about-us">
+        <div class="footer-section">
+          <h2>Quick Links</h2>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Restaurant</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Blogs/News</a></li>
-            <li><a href="#">Food</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../Restaurant/restaurant.html">Restaurant</a></li>
+            <li><a href="../navbafooter/About.html">About Us</a></li>
+            <li><a href="../blog&news/blog.html">Blogs/News</a></li>
+            <li><a href="../navbafooter/Food.html">Food</a></li>
           </ul>
         </div>
-      </div>
-
-      <div class="footer-section">
-        <!-- Customer Review Section -->
-        <div class="footer-column customer-review">
-          <h3>Customer Review</h3>
-          <textarea
-            id="comment"
-            placeholder="Write your feedback here..."
-          ></textarea>
-          <!-- Submit Button -->
-          <button type="submit" class="submit-btn">Submit</button>
+        <div class="footer-section customer-review">
+          <h2>Customer Review</h2>
+          <form id="reviewForm">
+            <textarea id="reviewText" rows="4" placeholder="Write your feedback here..."></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-        <!-- Opening Hours Section -->
-        <div class="footer-column opening-hours">
-          <h3>Opening Hours</h3>
-          <ul>
-            <li>Monday - Friday: 9 AM - 9 PM</li>
-            <li>Saturday - Sunday: 10 AM - 6 PM</li>
-          </ul>
-        </div>
-      </div>
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
       </div>
       <div class="copyright">
-        <ul>
-          <li><i class="fa-regular fa-copyright"></i> Local Bites,</li>
-          <li>Website by NeoNuts</li>
-        </ul>
+        <p>&copy; <span id="currentYear"></span> Local Bites, Website by NeoNuts</p>
       </div>
-    </footer>
 
-    <script>
-      // JavaScript function to toggle the visibility of the menu
-      function toggleMenu() {
-        var menu = document.getElementById("menu");
-        // Toggle the visibility of the menu by checking its current display value
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "block";
+      <!-- JavaScript for Functionality -->
+      <script>
+        // JavaScript to toggle the visibility of the menu
+        function toggleMenu() {
+          var menu = document.getElementById("menu");
+          if (menu.style.display === "block") {
+            menu.style.display = "none";
+          } else {
+            menu.style.display = "block";
+          }
         }
-      }
-    </script>
-  </body>
+
+        // Image Slider functionality
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+          showSlides((slideIndex += n));
+        }
+
+        function currentSlide(n) {
+          showSlides((slideIndex = n));
+        }
+
+        function showSlides(n) {
+          let i;
+          const slides = document.getElementsByClassName("slide");
+          const dots = document.getElementsByClassName("dot");
+
+          if (n > slides.length) {
+            slideIndex = 1;
+          }
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+        }
+
+        // Automatically show the first slide
+        showSlides(slideIndex);
+      </script>
+</body>
+
 </html>

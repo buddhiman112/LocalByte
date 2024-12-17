@@ -1,186 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Bites</title>
-    <link rel="stylesheet" href="restaurant.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <div class="firstpart">
-      <div class="logo"><img src="IMG_4063.PNG" alt="Logo" /></div>
-      <div class="sub-topic">
-        <h1>Local Bites</h1>
-        <p>"Taste and Trust"</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Bites</title>
+  <link rel="stylesheet" href="restaurant.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="images/logo.png" alt="LOCALBITES Logo" />
+        <h1>LOCALBITES</h1>
       </div>
-      <div class="social-media">
-        <p>Contact</p>
-        <a href="javascript:void(0);" onclick="toggleMenu()">
-          <i class="fa-solid fa-ellipsis-vertical"></i>
-        </a>
-        <div id="menu" class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Restaurant</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Blog/News</a></li>
-          </ul>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <!-- Header Right Section -->
+      <div class="header-right">
+        <!-- Social Media Section -->
+        <div class="social-media">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
+
+        <!-- Navbar Section -->
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/LocalBites/navbafooter/About.html">About</a></li>
+            <li><a href="../Restaurant/restaurant.html">Restaurant</a></li>
+            <li><a href="../navbafooter/Food.html">Foods</a></li>
+
+            <li><a href="../blog&news/blog.html">Blogs</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
+  </header>
 
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31714935701!2d85.28484720743393!3d27.70895422677957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1734421981381!5m2!1sen!2snp"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      width="100%"
-      height="300px"
-    ></iframe>
 
-    <div class="main-body">
-      <div class="user-prompt">
-        <h1>Places to Visit</h1>
-        <form id="searchForm" action="kathmandu.html" method="GET">
-          <div>
-            <input
-              type="search"
-              name="query"
-              placeholder="Search here"
-              id="searchInput"
-            />
+  <script>
+    // Mobile menu toggle functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const headerRight = document.querySelector('.header-right');
 
-            <a href="kathmandu.html" class="search-btn">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-          </div>
-        </form>
-      </div>
+    mobileMenuBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      headerRight.classList.toggle('active');
+      mobileMenuBtn.textContent = headerRight.classList.contains('active') ? '✕' : '☰';
+    });
 
-      <div class="featured-items">
-        <h2>Special Offers</h2>
-        <div class="cards">
-          <div class="card">
-            <img src="offer1.jpg" alt="Special Offer 1" />
-            <h3>Discounted Meals</h3>
-            <p>Get 20% off on all meals for first-time customers!</p>
-          </div>
-          <div class="card">
-            <img src="offer2.jpg" alt="Special Offer 2" />
-            <h3>Happy Hour</h3>
-            <p>
-              Join us every evening from 5 PM to 7 PM for drinks and snacks.
-            </p>
-          </div>
-          <div class="card">
-            <img src="offer3.jpg" alt="Special Offer 3" />
-            <h3>Free Dessert</h3>
-            <p>Enjoy a free dessert with any meal over $20.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h2>Local Bites</h2>
-          <p>Discover the best local flavors in your area.</p>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h2>Contact Us</h2>
-          <ul>
-            <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
-            <li><strong>Email:</strong> contact@website.com</li>
-            <li><strong>Address:</strong> Maitidevichowk, Kathmandu, Nepal</li>
-            <li>Opposite to NIC Asia Bank</li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h2>Quick Links</h2>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Restaurant</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Blogs/News</a></li>
-            <li><a href="#">Food</a></li>
-          </ul>
-        </div>
-        <div class="footer-section customer-review">
-          <h2>Customer Review</h2>
-          <form id="reviewForm">
-            <textarea
-              id="reviewText"
-              rows="4"
-              placeholder="Write your feedback here..."
-            ></textarea>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>
-          &copy; <span id="currentYear"></span> Local Bites, Website by NeoNuts
-        </p>
-      </div>
-    </footer>
-
-    <script>
-      function toggleMenu() {
-        var menu = document.getElementById("menu");
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "block";
-        }
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!headerRight.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+        headerRight.classList.remove('active');
+        mobileMenuBtn.textContent = '☰';
       }
-    </script>
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      // Set current year in copyright
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+    });
 
-      // Handle form submission
-      document
-        .getElementById("reviewForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const reviewText = document.getElementById("reviewText").value;
-          if (reviewText.trim() !== "") {
-            alert("Thank you for your feedback!");
-            document.getElementById("reviewText").value = "";
-          } else {
-            alert("Please enter your feedback before submitting.");
-          }
+    // Prevent menu from closing when clicking inside
+    headerRight.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
 
-      // Animate footer sections on scroll
+        // Close mobile menu after clicking a link
+        headerRight.classList.remove('active');
+        mobileMenuBtn.textContent = '☰';
+      });
+    });
+  </script>
 
-      // Call animation function when the page loads
-      window.addEventListener("load", animateOnScroll);
-    </script>
-  </body>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31714935701!2d85.28484720743393!3d27.70895422677957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1734421981381!5m2!1sen!2snp"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="300px"></iframe>
+
+  <div class="main-body">
+    <div class="user-prompt">
+      <h1>Places to Visit</h1>
+      <form id="searchForm" action="kathmandu.html" method="GET">
+        <div>
+          <input type="search" name="query" placeholder="Search here" id="searchInput" />
+
+          <a href="kathmandu.html" class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <div class="featured-items">
+      <h2>Special Offers</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="offer1.jpg" alt="Special Offer 1" />
+          <h3>Discounted Meals</h3>
+          <p>Get 20% off on all meals for first-time customers!</p>
+        </div>
+        <div class="card">
+          <img src="offer2.jpg" alt="Special Offer 2" />
+          <h3>Happy Hour</h3>
+          <p>
+            Join us every evening from 5 PM to 7 PM for drinks and snacks.
+          </p>
+        </div>
+        <div class="card">
+          <img src="offer3.jpg" alt="Special Offer 3" />
+          <h3>Free Dessert</h3>
+          <p>Enjoy a free dessert with any meal over $20.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h2>Local Bites</h2>
+        <p>Discover the best local flavors in your area.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h2>Contact Us</h2>
+        <ul>
+          <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
+          <li><strong>Email:</strong> contact@website.com</li>
+          <li><strong>Address:</strong> Maitidevichowk, Kathmandu, Nepal</li>
+          <li>Opposite to NIC Asia Bank</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Restaurant</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blogs/News</a></li>
+          <li><a href="#">Food</a></li>
+        </ul>
+      </div>
+      <div class="footer-section customer-review">
+        <h2>Customer Review</h2>
+        <form id="reviewForm">
+          <textarea id="reviewText" rows="4" placeholder="Write your feedback here..."></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>
+        &copy; <span id="currentYear"></span> Local Bites, Website by NeoNuts
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Set current year in copyright
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    // Handle form submission
+    document
+      .getElementById("reviewForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const reviewText = document.getElementById("reviewText").value;
+        if (reviewText.trim() !== "") {
+          alert("Thank you for your feedback!");
+          document.getElementById("reviewText").value = "";
+        } else {
+          alert("Please enter your feedback before submitting.");
+        }
+      });
+
+    // Animate footer sections on scroll
+
+    // Call animation function when the page loads
+    window.addEventListener("load", animateOnScroll);
+  </script>
+</body>
+
 </html>

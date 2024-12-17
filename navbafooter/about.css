@@ -6,87 +6,157 @@ body {
   width: 100%;
 }
 
-.firstpart {
+/* Header styles */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+/* Header styles */
+.header {
+  background-color: #000000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  margin: auto;
+  z-index: 1000;
+  height: 120px;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #070606;
-  color: rgb(249, 249, 247);
+  flex-wrap: wrap;
+
+}
+
+/* Logo styles */
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  font-size: 4px;
+  width: 100px;
   height: 100px;
-  font-weight: bold;
+  margin-right: 1rem;
 }
 
-.sub-topic {
-  text-align: center;
-  font-family: cursive;
+.logo h1 {
+  font-size: 1.5rem;
+  color: rgb(244, 243, 243);
 }
 
-.social-media {
+/* Header right section styles */
+.header-right {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-left: 44px;
-  gap: 55px;
-  position: relative; /* To position the dropdown menu relative to the icon */
 }
 
-.social-media p {
-  margin: 0;
+/* Social media styles */
+.social-media {
+  display: flex;
+  gap: 1rem;
+  margin-right: 2rem;
 }
 
 .social-media a {
-  font-size: 24px;
-  color: #333; /* Default icon color */
-  text-decoration: none; /* Remove underline */
-  transition: color 0.3s, transform 0.3s; /* Smooth transition */
+  color: #efe9e9;
+  transition: color 0.3s ease;
 }
 
-/* Hover effect on the icon */
 .social-media a:hover {
-  color: #f4a261; /* Change icon color on hover */
-  transform: scale(1.2); /* Slightly enlarge the icon */
+  color: #ef5959;
 }
 
-/* Dropdown Menu Styles */
-.menu {
-  display: none; /* Hide menu by default */
-  position: absolute; /* Position it below the icon */
-  top: 30px; /* Adjust top positioning */
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  width: 150px;
-  z-index: 1000;
-}
-
-.menu ul {
+/* Navbar styles */
+.navbar ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.menu li {
-  padding: 10px;
-}
-
-.menu li a {
+.navbar a {
   text-decoration: none;
-  color: #333;
-  display: block;
-  padding: 5px 10px;
+  color: #f4ecec;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-weight: bold;
+
 }
 
-.menu li a:hover {
-  background-color: #f4a261;
-  color: white;
+.navbar a:hover {
+  color: #f04c4c;
 }
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 1001;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f96868;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+
+  .social-media {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .header-right.active {
+    display: flex;
+  }
+}
+
 /* General Footer Styles */
 .footer {
   background-color: #2c3e50;
@@ -181,6 +251,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -244,9 +315,11 @@ img {
 
 /* Zoom-in effect for all images */
 .image img {
-  transition: transform 0.5s ease; /* Smooth scaling */
+  transition: transform 0.5s ease;
+  /* Smooth scaling */
 }
 
 .image img:hover {
-  transform: scale(1.1); /* Zoom in by 10% */
+  transform: scale(1.1);
+  /* Zoom in by 10% */
 }
