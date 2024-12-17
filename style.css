@@ -221,25 +221,175 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Counter Item Styles */
+.counter-container {
+  text-align: center;
+  margin: 20px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+.counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f4b400;
+  /* Yellow Color */
+}
+
+
+
+/* Food Features Section */
+.food-features {
+  padding: 50px 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Feature Box */
+.feature-box {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(219, 12, 12, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-box h3 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Features Section */
+.food-features {
+  padding: 30px 10px;
+  background-color: #fff;
+  overflow-x: hidden;
+  /* Prevent horizontal overflow */
+}
+
+/* Features Container - Horizontal Scroll */
+.features-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  scroll-behavior: smooth;
+  /* Smooth scrolling */
+  white-space: nowrap;
+  /* Prevent items from wrapping */
+}
+
+.features-container::-webkit-scrollbar {
+  height: 8px;
+  /* Scrollbar height */
+}
+
+.features-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  /* Scrollbar thumb color */
+  border-radius: 4px;
+}
+
+.features-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Scrollbar track color */
+}
+
+/* Feature Box Styling */
+.feature-box {
+  background: #ffffff;
+  min-width: 280px;
+  /* Minimum width for each box */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+
+/*CSS for Buttons (Style the Scroll Buttons)*/
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background-color: #555;
+}
+
+#scroll-left {
+  left: 10px;
+}
+
+#scroll-right {
+  right: 10px;
+}
+
+
+
+
+
+
 .counter-item {
   margin: 20px;
-  opacity: 0;
-  /* Hidden initially for fade-in animation */
-  transform: translateY(30px);
-  /* Start from bottom */
-  animation: fadeInUp 1s ease-out forwards;
-  /* Slide up and fade in */
-}
-
-.counter-item:nth-child(2) {
-  animation-delay: 0.3s;
-  /* Delay for second item */
-}
-
-.counter-item:nth-child(3) {
-  animation-delay: 0.6s;
-  /* Delay for third item */
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .counter-item h1 {
@@ -247,33 +397,12 @@ main {
   color: #f4b400;
   /* Yellow */
   margin: 0;
-  transition: transform 0.5s ease-in-out;
 }
 
 .counter-item p {
   font-size: 1em;
   color: #555;
   margin-top: 10px;
-}
-
-/* Animated Counter Text */
-.counter.animated {
-  display: inline-block;
-  animation: pop 0.8s ease infinite alternate;
-  /* Pop animation for effect */
-}
-
-/* Keyframes for Fade-In Slide-Up */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Pop Animation for Counters */
@@ -391,7 +520,7 @@ main {
 
 .review-section .btn.submit-review:hover {
   background-color: #e55341;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 /* Animations */

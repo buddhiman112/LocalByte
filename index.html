@@ -23,7 +23,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#discover">Discover</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">AboutUs</a></li>
             </ul>
         </nav>
     </header>
@@ -41,6 +41,62 @@
                 <p>Experience the finest dining spots and culinary wonders in your city.</p>
             </div>
         </section>
+
+        <!-- Food Feature Section -->
+       
+        <button id="scroll-left" class="scroll-btn">←</button>
+        
+        <section class="food-features">
+            <div class="features-container">
+                <!-- Single Feature -->
+                <div class="feature-box" data-aos="fade-up">
+                    <img src="images/image.png" alt="Local Gems" class="feature-icon">
+                    <h3>Local Gems</h3>
+                    <p>Discover hidden eateries in your neighborhood.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://via.placeholder.com/60" alt="Culinary Tours" class="feature-icon">
+                    <h3>Culinary Tours</h3>
+                    <p>Join guided tours for food lovers.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://via.placeholder.com/60" alt="Chef Spotlights" class="feature-icon">
+                    <h3>Chef Spotlights</h3>
+                    <p>Meet the culinary wizards behind dishes.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://via.placeholder.com/60" alt="Foodie Events" class="feature-icon">
+                    <h3>Foodie Events</h3>
+                    <p>Stay updated on local food festivals.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://via.placeholder.com/60" alt="Cuisine Variety" class="feature-icon">
+                    <h3>Cuisine Variety</h3>
+                    <p>Explore flavors from every corner of the globe.</p>
+                </div>
+
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://via.placeholder.com/60" alt="User Reviews" class="feature-icon">
+                    <h3>User Reviews</h3>
+                    <p>Read real opinions from fellow foodies.</p>
+                </div>
+            </div>
+        </section>
+        <button id="scroll-right" class="scroll-btn">→</button>
+        
+
+        <!-- AOS Library for Animation -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000, // Animation duration
+                once: true // Only animate once
+            });
+        </script>
 
 
 
@@ -86,7 +142,7 @@
             </div>
         </section>
 
-        
+
 
 
 
@@ -94,27 +150,39 @@
         <div class="faq-section">
             <h1>Frequently Asked Questions</h1>
             <p>Got questions? We've got answers!</p>
-
-            <div class="faq-item">
+            <summary>
                 <h3>How do I find restaurants?</h3>
-                <p>Use our search feature to find nearby restaurants instantly!</p>
-                <button class="btn search-btn">Search Now</button>
-                <div class="faq-badge">Search</div>
-            </div>
-
-            <div class="faq-item">
+            </summary>
+            <details>
+                <div class="faq-item">
+                    <p>Use our search feature to find nearby restaurants instantly!</p>
+                    <button class="btn search-btn">Search Now</button>
+                    <div class="faq-badge">Search</div>
+                </div>
+            </details>
+            <summary>
                 <h3>Can I leave reviews?</h3>
-                <p>Absolutely! Share your thoughts and help others dine better!</p>
-                <button class="btn review-btn">Search Now</button>
-                <div class="faq-badge">Reviews</div>
-            </div>
+            </summary>
+            <details>
+                <div class="faq-item">
 
-            <div class="faq-item">
+                    <p>Absolutely! Share your thoughts and help others dine better!</p>
+                    <button class="btn review-btn">Search Now</button>
+                    <div class="faq-badge">Reviews</div>
+                </div>
+            </details>
+
+            <summary>
                 <h3>Is this site free to use?</h3>
-                <p>Yes, it's completely free! Enjoy exploring without spending a dime!</p>
-                <button class="btn free-btn">Search Now</button>
-                <div class="faq-badge">Free</div>
-            </div>
+            </summary>
+            <details>
+                <div class="faq-item">
+                    <p>Yes, it's completely free! Enjoy exploring without spending a dime!</p>
+                    <button class="btn free-btn">Search Now</button>
+                    <div class="faq-badge">Free</div>
+                </div>
+            </details>
+
         </div>
 
         <!-- Visitor Review and About Section -->
@@ -126,7 +194,7 @@
         </div>
 
         <div class="about-website">
-            <h2>About_Us</h2>
+            <h2>About Us</h2>
             <p>This platform helps you discover local restaurants and food experiences effortlessly. Whether you want to
                 explore new dining spots or share your reviews, everything here is <strong>free</strong> for users.</p>
         </div>

@@ -1,151 +1,92 @@
-
-    // Auto-advance slides
-    setInterval(nextSlide, 5000);
-
-    // GSAP Animations
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Navbar animation
-    gsap.from('nav', {
-        y: -100,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out'
-    });
-
-    // Slider content animation
-    gsap.from('.slide-content', {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: 0.5,
-        ease: 'power3.out'
-    });
-
-    // Info boxes animation
-    gsap.from('.info-box', {
-        scrollTrigger: {
-            trigger: '.info-container',
-            start: 'top 80%'
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: 'power3.out'
-    });
-
-    // About section animation
-    gsap.from('.about-us', {
-        scrollTrigger: {
-            trigger: '.about-us',
-            start: 'top 80%'
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out'
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-});
-
-
-// Select all counters
-// Slider Functionality
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll('.counter');
 
+    // Function to animate counter numbers
     const animateCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
+        const target = parseInt(counter.getAttribute('data-target'), 10);
+        let count = 0; // Start from 0
 
-        const increment = target / 200; // Adjust speed of the animation
+        const increment = target / 200; // Controls the speed of the animation
         const updateCounter = () => {
             count += increment;
+
             if (count < target) {
-                counter.innerText = Math.ceil(count) + "+";
-                requestAnimationFrame(updateCounter);
+                counter.innerText = Math.ceil(count) + "";
+                requestAnimationFrame(updateCounter); // Smooth animation
             } else {
-                counter.innerText = target + "+";
+                counter.innerText = target + ""; // Final value
             }
         };
+
         updateCounter();
     };
 
-    if ('IntersectionObserver' in window) {
+    // Check if IntersectionObserver is supported
+    if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    observer.unobserve(entry.target);
+                    animateCounter(entry.target); // Start counter animation
+                    observer.unobserve(entry.target); // Stop observing once animated
                 }
             });
-        }, { root: null, threshold: 0.1 });
+        }, { root: null, threshold: 0.5 }); // Trigger when 50% visible
 
+        // Observe each counter element
         counters.forEach(counter => observer.observe(counter));
     } else {
-        // Fallback for older browsers
+        // Fallback: Animate all counters immediately
         counters.forEach(counter => animateCounter(counter));
     }
 });
 
+//for scrollable feature 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector('.features-container');
+    const scrollLeftBtn = document.getElementById('scroll-left');
+    const scrollRightBtn = document.getElementById('scroll-right');
 
-
-document.querySelector('.submit-review').addEventListener('click', () => {
-    const reviewText = document.querySelector('textarea').value.trim();
-    if (reviewText) {
-        alert('Thank you for your review!');
-        document.querySelector('textarea').value = ''; // Clear the input
-    } else {
-        alert('Please write a review before submitting.');
-    }
-});
-
-document.getElementById("year").innerText = new Date().getFullYear();
-document.addEventListener('DOMContentLoaded', function () {
-    // Set current year in copyright
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Animate footer elements on scroll
-    const footerElements = document.querySelectorAll('.footer-column, .social-icons, .copyright');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+    // Scroll Left Function
+    scrollLeftBtn.addEventListener('click', () => {
+        container.scrollBy({
+            left: -300, // Scroll amount
+            behavior: 'smooth'
         });
-    }, { threshold: 0.1 });
-
-    footerElements.forEach(el => observer.observe(el));
-
-    // Submit button animation
-    const submitBtn = document.querySelector('.submit-btn');
-    submitBtn.addEventListener('mousedown', function () {
-        this.style.transform = 'scale(0.95)';
-    });
-    submitBtn.addEventListener('mouseup', function () {
-        this.style.transform = 'scale(1)';
     });
 
-    // Textarea auto-resize
-    const textarea = document.getElementById('comment');
-    textarea.addEventListener('input', function () {
-        this.style.height = 'auto';
-        this.style.height = this.scrollHeight + 'px';
+    // Scroll Right Function
+    scrollRightBtn.addEventListener('click', () => {
+        container.scrollBy({
+            left: 300, // Scroll amount
+            behavior: 'smooth'
+        });
     });
 });
-function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("active");
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector('.features-container');
+    let scrollAmount = 1; // Speed of scrolling
+
+    function autoScroll() {
+        container.scrollLeft += scrollAmount; // Scroll the container to the right
+
+        // Reset scroll position to create an infinite loop
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+            container.scrollLeft = 0;
+        }
+    }
+
+    // Start automatic scrolling
+    let scrollInterval = setInterval(autoScroll, 20); // Adjust interval for smoothness
+
+    // Optional: Pause on hover
+    container.addEventListener('mouseenter', () => {
+        clearInterval(scrollInterval); // Stop scrolling when hovered
+    });
+
+    container.addEventListener('mouseleave', () => {
+        scrollInterval = setInterval(autoScroll, 20); // Resume scrolling when mouse leaves
+    });
+});
