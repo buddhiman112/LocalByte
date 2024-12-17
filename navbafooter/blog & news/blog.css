@@ -325,7 +325,6 @@ img {
 
 /* Content Boxes Layout */
 .b {
-  padding-top: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -333,11 +332,6 @@ img {
 }
 .b h2 {
   color: #2c3e50;
-}
-.b p {
-  color: #7e7c7c;
-  font-size: 20px;
-  padding-bottom: 22px;
 }
 .content-boxes {
   display: grid;
