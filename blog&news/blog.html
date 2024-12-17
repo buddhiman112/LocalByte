@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Local Bites - Blogs and News</title>
     <link rel="stylesheet" href="blog.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -82,7 +86,11 @@
       <div class="content-boxes">
         <div class="dox-image1">
           <div class="pict1">
-            <img src="image8.jpg" alt="logo"  style="width: 400px; height: 300px;">
+            <img
+              src="image8.jpg"
+              alt="logo"
+              style="width: 400px; height: 300px"
+            />
           </div>
           <div class="text1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
@@ -120,7 +128,7 @@
         </div>
         <div class="dox-image3">
           <div class="pict3">
-            <img src="image15.jpg" alt="logo" style="height: 300px;" >
+            <img src="image15.jpg" alt="logo" style="height: 300px" />
           </div>
           <div class="text1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
@@ -161,7 +169,7 @@
           </div>
           <!-- News Article 2 -->
           <div class="newsphoto">
-            <img src="image17.jpg" alt="News 2" style="height: 320px;">
+            <img src="image17.jpg" alt="News 2" style="height: 320px" />
             <div class="overlay">
               <h3>Top Restaurants to Visit</h3>
               <p>Discover the best dining spots in your city.</p>
@@ -169,7 +177,7 @@
           </div>
           <!-- News Article 3 -->
           <div class="newsphoto">
-            <img src="image18.jpg" alt="newimage" style="height: 320px;">
+            <img src="image18.jpg" alt="newimage" style="height: 320px" />
             <div class="overlay">
               <h3>Exciting Food Events</h3>
               <p>Join us at food festivals and events this season.</p>
@@ -204,25 +212,33 @@
       </div>
     </main>
 
-    <!-- Footer Section -->
     <footer class="footer">
-      <h1>Local Bites</h1>
-      <div class="footer-section">
-        <!-- Contact and Location Section -->
-        <div class="footer-column contact">
-          <h3>Contact Us</h3>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h2>Local Bites</h2>
+          <p>Discover the best local flavors in your area.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h2>Contact Us</h2>
           <ul>
             <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
             <li><strong>Email:</strong> contact@website.com</li>
+            <li><strong>Address:</strong> Maitidevichowk, Kathmandu, Nepal</li>
+            <li>Opposite to NIC Asia Bank</li>
           </ul>
         </div>
-        <div class="footer-column location">
-          <h3>Location</h3>
-          <p>Maitidevichowk, Kathmandu, Nepal</p>
-          <p>Opposite to NIC Asia Bank</p>
-        </div>
-        <!-- About Us Section -->
-        <div class="footer-column about-us">
+        <div class="footer-section">
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Restaurant</a></li>
@@ -232,45 +248,25 @@
             <li><a href="#">Food</a></li>
           </ul>
         </div>
-      </div>
-
-      <div class="footer-section">
-        <!-- Customer Review Section -->
-        <div class="footer-column customer-review">
-          <h3>Customer Review</h3>
-          <textarea
-            id="comment"
-            placeholder="Write your feedback here..."
-          ></textarea>
-          <button type="submit" class="submit-btn">Submit</button>
-        </div>
-
-        <!-- Opening Hours Section -->
-        <div class="footer-column opening-hours">
-          <h3>Opening Hours</h3>
-          <ul>
-            <li>Monday - Friday: 9 AM - 9 PM</li>
-            <li>Saturday - Sunday: 10 AM - 6 PM</li>
-          </ul>
+        <div class="footer-section customer-review">
+          <h2>Customer Review</h2>
+          <form id="reviewForm">
+            <textarea
+              id="reviewText"
+              rows="4"
+              placeholder="Write your feedback here..."
+            ></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
-
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      </div>
-
       <div class="copyright">
-        <ul>
-          <li><i class="fa-regular fa-copyright"></i> Local Bites,</li>
-          <li>Website by NeoNuts</li>
-        </ul>
+        <p>
+          &copy; <span id="currentYear"></span> Local Bites, Website by NeoNuts
+        </p>
       </div>
     </footer>
 
-    <!-- JavaScript for Functionality -->
     <script>
       // JavaScript to toggle the visibility of the menu
       function toggleMenu() {
