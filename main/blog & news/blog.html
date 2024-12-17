@@ -1,325 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Bites - Blogs and News</title>
-    <link rel="stylesheet" href="blog.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <!-- Header Section -->
-    <div class="firstpart">
-      <div class="logo">
-        <img src="IMG_4063.PNG" alt="Logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Bites - Blogs and News</title>
+  <link rel="stylesheet" href="blog.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Header Section -->
+  <div class="firstpart">
+    <div class="logo">
+      <img src="IMG_4063.PNG" alt="Logo" />
+    </div>
+    <div class="sub-topic">
+      <h1>Local Bites</h1>
+      <p>"Taste and Trust"</p>
+    </div>
+    <div class="social-media">
+      <p>contact</p>
+      <a href="javascript:void(0);" onclick="toggleMenu()">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </a>
+      <!-- Dropdown Menu -->
+      <div id="menu" class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Restaurant</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Food</a></li>
+          <li><a href="#">Blog/News</a></li>
+        </ul>
       </div>
-      <div class="sub-topic">
-        <h1>Local Bites</h1>
-        <p>"Taste and Trust"</p>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Title Section -->
+    <div class="title">
+      <h1>Blogs and News</h1>
+
+      <!-- Slider Section -->
+      <div class="slider-container">
+        <div class="slide fade">
+          <img src="image.png" alt="Blog 1" loading="lazy" />
+          <div class="caption">Discover Local Cuisine Tips</div>
+        </div>
+        <div class="slide fade">
+          <img src="11.jpg" alt="Blog 2" loading="lazy" />
+          <div class="caption">Top Restaurants in Town</div>
+        </div>
+        <div class="slide fade">
+          <img src="IMG_4063.PNG" alt="Blog 3" loading="lazy" />
+          <div class="caption">Exciting Food Trends of 2024</div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
       </div>
-      <div class="social-media">
-        <p>contact</p>
-        <a href="javascript:void(0);" onclick="toggleMenu()">
-          <i class="fa-solid fa-ellipsis-vertical"></i>
-        </a>
-        <!-- Dropdown Menu -->
-        <div id="menu" class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Restaurant</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Blog/News</a></li>
-          </ul>
+
+      <!-- Dots for Navigation -->
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+    <!-- Content Boxes Section -->
+    <div class="b">
+      <h2>Latest Blogs</h2>
+    </div>
+    <div class="content-boxes">
+      <div class="dox-image1">
+        <div class="pict1">
+          <img src="image8.jpg" alt="logo" style="width: 400px; height: 300px;">
+        </div>
+        <div class="text1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          facere harum, distinctio accusantium.
+        </div>
+      </div>
+
+      <div class="dox-image2">
+        <div class="pict2">
+          <img src="image9.jpg" alt="logo" />
+        </div>
+        <div class="text1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          facere harum, distinctio accusantium.
+        </div>
+      </div>
+
+      <div class="dox-image3">
+        <div class="pict3">
+          <img src="image10.jpg" alt="logo" />
+        </div>
+        <div class="text1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          facere harum, distinctio accusantium.
+        </div>
+      </div>
+      <div class="dox-image3">
+        <div class="pict3">
+          <img src="image12.jpg" alt="logo" />
+        </div>
+        <div class="text1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          facere harum, distinctio accusantium.
+        </div>
+      </div>
+      <div class="dox-image3">
+        <div class="pict3">
+          <img src="image15.jpg" alt="logo" style="height: 300px;">
+        </div>
+        <div class="text1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          facere harum, distinctio accusantium.
+        </div>
+      </div>
+
+      <!-- Additional Content Box -->
+      <div class="dox-image3">
+        <div class="pict4">
+          <img src="image14.jpg" alt="logo" />
+        </div>
+        <div class="text1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          facere harum, distinctio accusantium.
         </div>
       </div>
     </div>
 
-    <!-- Main Content Section -->
-    <main>
-      <!-- Title Section -->
-      <div class="title">
-        <h1>Blogs and News</h1>
-
-        <!-- Slider Section -->
-        <div class="slider-container">
-          <div class="slide fade">
-            <img src="image.png" alt="Blog 1" loading="lazy" />
-            <div class="caption">Discover Local Cuisine Tips</div>
-          </div>
-          <div class="slide fade">
-            <img src="11.jpg" alt="Blog 2" loading="lazy" />
-            <div class="caption">Top Restaurants in Town</div>
-          </div>
-          <div class="slide fade">
-            <img src="IMG_4063.PNG" alt="Blog 3" loading="lazy" />
-            <div class="caption">Exciting Food Trends of 2024</div>
-          </div>
-
-          <!-- Navigation Buttons -->
-          <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-          <a class="next" onclick="changeSlide(1)">&#10095;</a>
-        </div>
-
-        <!-- Dots for Navigation -->
-        <div class="dots-container">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+    <!-- News Section -->
+    <div class="news">
+      <div class="news1">
+        <h2>Latest News</h2>
+        <p>
+          Stay updated with the latest trends and updates in the culinary
+          world.
+        </p>
+        <!-- Add any news or updates here -->
       </div>
-
-      <!-- Content Boxes Section -->
-      <div class="b">
-        <h2>Latest Blogs</h2>
-      </div>
-      <div class="content-boxes">
-        <div class="dox-image1">
-          <div class="pict1">
-            <img src="image8.jpg" alt="logo"  style="width: 400px; height: 300px;">
-          </div>
-          <div class="text1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            facere harum, distinctio accusantium.
+      <div class="news-grid">
+        <!-- News Article 1 -->
+        <div class="newsphoto">
+          <img src="image16.webp" alt="News 1" />
+          <div class="overlay">
+            <h3>New Culinary Trends</h3>
+            <p>Explore the latest trends in the culinary world.</p>
           </div>
         </div>
-
-        <div class="dox-image2">
-          <div class="pict2">
-            <img src="image9.jpg" alt="logo" />
-          </div>
-          <div class="text1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            facere harum, distinctio accusantium.
+        <!-- News Article 2 -->
+        <div class="newsphoto">
+          <img src="image17.jpg" alt="News 2" style="height: 320px;">
+          <div class="overlay">
+            <h3>Top Restaurants to Visit</h3>
+            <p>Discover the best dining spots in your city.</p>
           </div>
         </div>
-
-        <div class="dox-image3">
-          <div class="pict3">
-            <img src="image10.jpg" alt="logo" />
-          </div>
-          <div class="text1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            facere harum, distinctio accusantium.
+        <!-- News Article 3 -->
+        <div class="newsphoto">
+          <img src="image18.jpg" alt="newimage" style="height: 320px;">
+          <div class="overlay">
+            <h3>Exciting Food Events</h3>
+            <p>Join us at food festivals and events this season.</p>
           </div>
         </div>
-        <div class="dox-image3">
-          <div class="pict3">
-            <img src="image12.jpg" alt="logo" />
-          </div>
-          <div class="text1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            facere harum, distinctio accusantium.
-          </div>
-        </div>
-        <div class="dox-image3">
-          <div class="pict3">
-            <img src="image15.jpg" alt="logo" style="height: 300px;" >
-          </div>
-          <div class="text1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            facere harum, distinctio accusantium.
+        <!-- News Article 4 -->
+        <div class="newsphoto">
+          <img src="2.png" alt="" />
+          <div class="overlay">
+            <h3>Healthy Eating Habits</h3>
+            <p>
+              Tips on maintaining a balanced and healthy diet while enjoying
+              your meals.
+            </p>
           </div>
         </div>
-
-        <!-- Additional Content Box -->
-        <div class="dox-image3">
-          <div class="pict4">
-            <img src="image14.jpg" alt="logo" />
-          </div>
-          <div class="text1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            facere harum, distinctio accusantium.
+        <!-- News Article 5 -->
+        <div class="newsphoto">
+          <img src="3.png" alt="" />
+          <div class="overlay">
+            <h3>Food Sustainability</h3>
+            <p>
+              Understanding the importance of sustainable food practices in
+              today's world.
+            </p>
           </div>
         </div>
       </div>
-
-      <!-- News Section -->
-      <div class="news">
-        <div class="news1">
-          <h2>Latest News</h2>
-          <p>
-            Stay updated with the latest trends and updates in the culinary
-            world.
-          </p>
-          <!-- Add any news or updates here -->
-        </div>
-        <div class="news-grid">
-          <!-- News Article 1 -->
-          <div class="newsphoto">
-            <img src="image16.webp" alt="News 1" />
-            <div class="overlay">
-              <h3>New Culinary Trends</h3>
-              <p>Explore the latest trends in the culinary world.</p>
-            </div>
-          </div>
-          <!-- News Article 2 -->
-          <div class="newsphoto">
-            <img src="image17.jpg" alt="News 2" style="height: 320px;">
-            <div class="overlay">
-              <h3>Top Restaurants to Visit</h3>
-              <p>Discover the best dining spots in your city.</p>
-            </div>
-          </div>
-          <!-- News Article 3 -->
-          <div class="newsphoto">
-            <img src="image18.jpg" alt="newimage" style="height: 320px;">
-            <div class="overlay">
-              <h3>Exciting Food Events</h3>
-              <p>Join us at food festivals and events this season.</p>
-            </div>
-          </div>
-          <!-- News Article 4 -->
-          <div class="newsphoto">
-            <img src="2.png" alt="" />
-            <div class="overlay">
-              <h3>Healthy Eating Habits</h3>
-              <p>
-                Tips on maintaining a balanced and healthy diet while enjoying
-                your meals.
-              </p>
-            </div>
-          </div>
-          <!-- News Article 5 -->
-          <div class="newsphoto">
-            <img src="3.png" alt="" />
-            <div class="overlay">
-              <h3>Food Sustainability</h3>
-              <p>
-                Understanding the importance of sustainable food practices in
-                today's world.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="view-more">
-          <a href="#">View More News</a>
-        </div>
+      <div class="view-more">
+        <a href="#">View More News</a>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      <h1>Local Bites</h1>
-      <div class="footer-section">
-        <!-- Contact and Location Section -->
-        <div class="footer-column contact">
-          <h3>Contact Us</h3>
-          <ul>
-            <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
-            <li><strong>Email:</strong> contact@website.com</li>
-          </ul>
-        </div>
-        <div class="footer-column location">
-          <h3>Location</h3>
-          <p>Maitidevichowk, Kathmandu, Nepal</p>
-          <p>Opposite to NIC Asia Bank</p>
-        </div>
-        <!-- About Us Section -->
-        <div class="footer-column about-us">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Restaurant</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Blogs/News</a></li>
-            <li><a href="#">Food</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-section">
-        <!-- Customer Review Section -->
-        <div class="footer-column customer-review">
-          <h3>Customer Review</h3>
-          <textarea
-            id="comment"
-            placeholder="Write your feedback here..."
-          ></textarea>
-          <button type="submit" class="submit-btn">Submit</button>
-        </div>
-
-        <!-- Opening Hours Section -->
-        <div class="footer-column opening-hours">
-          <h3>Opening Hours</h3>
-          <ul>
-            <li>Monday - Friday: 9 AM - 9 PM</li>
-            <li>Saturday - Sunday: 10 AM - 6 PM</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      </div>
-
-      <div class="copyright">
+  <!-- Footer Section -->
+  <footer class="footer">
+    <h1>Local Bites</h1>
+    <div class="footer-section">
+      <!-- Contact and Location Section -->
+      <div class="footer-column contact">
+        <h3>Contact Us</h3>
         <ul>
-          <li><i class="fa-regular fa-copyright"></i> Local Bites,</li>
-          <li>Website by NeoNuts</li>
+          <li><strong>Phone:</strong> +977-xxxx-xxxx</li>
+          <li><strong>Email:</strong> contact@website.com</li>
         </ul>
       </div>
-    </footer>
+      <div class="footer-column location">
+        <h3>Location</h3>
+        <p>Maitidevichowk, Kathmandu, Nepal</p>
+        <p>Opposite to NIC Asia Bank</p>
+      </div>
+      <!-- About Us Section -->
+      <div class="footer-column about-us">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Restaurant</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blogs/News</a></li>
+          <li><a href="#">Food</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <!-- JavaScript for Functionality -->
-    <script>
-      // JavaScript to toggle the visibility of the menu
-      function toggleMenu() {
-        var menu = document.getElementById("menu");
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "block";
-        }
+    <div class="footer-section">
+      <!-- Customer Review Section -->
+      <div class="footer-column customer-review">
+        <h3>Customer Review</h3>
+        <textarea id="comment" placeholder="Write your feedback here..."></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+
+      <!-- Opening Hours Section -->
+      <div class="footer-column opening-hours">
+        <h3>Opening Hours</h3>
+        <ul>
+          <li>Monday - Friday: 9 AM - 9 PM</li>
+          <li>Saturday - Sunday: 10 AM - 6 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+
+    <div class="copyright">
+      <ul>
+        <li><i class="fa-regular fa-copyright"></i> Local Bites,</li>
+        <li>Website by NeoNuts</li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Functionality -->
+  <script>
+    // JavaScript to toggle the visibility of the menu
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+
+    // Image Slider functionality
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function changeSlide(n) {
+      showSlides((slideIndex += n));
+    }
+
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("slide");
+      const dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
       }
 
-      // Image Slider functionality
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      function changeSlide(n) {
-        showSlides((slideIndex += n));
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
       }
 
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
       }
 
-      function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("slide");
-        const dots = document.getElementsByClassName("dot");
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
 
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
+    // Automatically show the first slide
+    showSlides(slideIndex);
+  </script>
+</body>
 
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-      }
-
-      // Automatically show the first slide
-      showSlides(slideIndex);
-    </script>
-  </body>
 </html>
