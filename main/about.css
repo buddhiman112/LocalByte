@@ -252,4 +252,15 @@ image {
 img {
   margin: 10px;
   padding-left: 30px;
+  transition: transform 0.5s ease;
 }
+
+/* Zoom-in effect for all images */
+.image img {
+    transition: transform 0.5s ease; /* Smooth scaling */
+  }
+  
+  .image img:hover {
+    transform: scale(1.1); /* Zoom in by 10% */
+  }
+  

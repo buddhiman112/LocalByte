@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    width: 100%;
+    display: flex;
+    
+}
+
+
+
+
+h1 {
+    align-items: center;
+    margin: auto;
+}
+
+#icon {
+    display: inline-flex;
+    
+    margin-left: 700px;
+
+
+}
+
+a {
+    margin-left: 30px;
+}
+
