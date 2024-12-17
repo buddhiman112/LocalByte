@@ -419,14 +419,16 @@ main {
 .faq-section {
   padding: 2rem 5%;
   text-align: sta;
+  background-color: #ccc;
 }
 
 .faq-item {
-  background-color: white;
+  background-color: rgb(235, 213, 213);
   padding: 1rem;
   border-radius: 10px;
   margin: 1rem 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 
