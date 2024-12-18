@@ -18,7 +18,7 @@
     <div class="container">
       <!-- Logo Section -->
       <div class="logo">
-        <img src="../LocalBites/images/logo.png" alt="LOCALBITES Logo" />
+        <a href="/index.html"><img src="/images/logo.png" alt="LOCALBITES Logo" /></a>
         <h1>LOCALBITES</h1>
       </div>
 
@@ -45,12 +45,12 @@
         <!-- Navbar Section -->
         <nav class="navbar">
           <ul>
-            <li><a href="../LocalBites/index.html">Home</a></li>
-            <li><a href="../LocalBites/navbafooter/About.html">About</a></li>
-            <li><a href="../Restaurant1/restaurant.html">Restaurant</a></li>
-            <li><a href="../navbafooter/Food.html">Foods</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/LocalBites/navbafooter/About.html">About</a></li>
+            <li><a href="/Restaurant1/restaurant.html">Restaurant</a></li>
+            <li><a href="/LocalBites/navbafooter/Food.html">Foods</a></li>
 
-            <li><a href="../blog&news/blog.html">Blogs</a></li>
+            <li><a href="blog.html">Blogs</a></li>
           </ul>
         </nav>
       </div>
@@ -288,12 +288,12 @@
       <div class="footer-section">
         <h2>Quick Links</h2>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Restaurant</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Blogs/News</a></li>
-          <li><a href="#">Food</a></li>
+          <li><a href="/index.html">Home</a></li>
+            <li><a href="/LocalBites/navbafooter/About.html">About</a></li>
+            <li><a href="/Restaurant1/restaurant.html">Restaurant</a></li>
+            <li><a href="/LocalBites/navbafooter/Food.html">Foods</a></li>
+
+            <li><a href="blog.html">Blogs</a></li>
         </ul>
       </div>
       <div class="footer-section customer-review">
@@ -320,57 +320,7 @@
         }
       }
 
-      // Image Slider functionality
-      let slideIndex = 1;
-      showSlides(slideIndex);
 
-      function changeSlide(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("slide");
-        const dots = document.getElementsByClassName("dot");
-
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-      }
-
-      // Automatically show the first slide
-      showSlides(slideIndex);
-    </script>
-
-    <!-- JavaScript for Functionality -->
-    <script>
-      // JavaScript to toggle the visibility of the menu
-      function toggleMenu() {
-        var menu = document.getElementById("menu");
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "block";
-        }
-      }
 
       // Image Slider functionality
       let slideIndex = 1;

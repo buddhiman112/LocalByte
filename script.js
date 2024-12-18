@@ -109,3 +109,12 @@ document.addEventListener('click', (event) => {
 navMenu.addEventListener('click', (event) => {
     event.stopPropagation();
 });
+
+
+
+
+
+
+
+
+
