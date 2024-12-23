@@ -895,12 +895,18 @@ body {
 /* Mobile menu button */
 .mobile-menu-btn {
   display: none;
-  background: none;
+  background: black;
   border: none;
   font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
+  cursor: none;
+  color: #ffffff;
   z-index: 1001;
+
+}
+.mobile-menu-btn:hover {
+  color:green;
+  transition: cubic-bezier(10);
+
 }
 
 /* Responsive styles */

@@ -308,10 +308,11 @@ p1 {
 
 }
 
-image {
+.image {
 
   padding: 10px;
   margin-right: 10px;
+  border-radius: 10px;
 }
 
 img {

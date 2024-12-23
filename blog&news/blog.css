@@ -296,12 +296,16 @@ h2 {
 /* Slider Section Styling */
 .slider-container {
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 10px;
 }
+
+
+
+
 
 .slide {
   display: none;
